@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import Whave from "../assets/olas-del-mar.png";
-import WhaveIcon from "../assets/wave-icon.png";
-import Clock from "../assets/clock.png";
+
+// Definimos las rutas de las imágenes usando PUBLIC_URL para GitHub Pages
+const Whave = `${process.env.PUBLIC_URL}/assets/olas-del-mar.png`;
+const WhaveIcon = `${process.env.PUBLIC_URL}/assets/wave-icon.png`;
+const Clock = `${process.env.PUBLIC_URL}/assets/clock.png`;
 
 function MareaCalculator() {
   const [horaPleamar, setHoraPleamar] = useState("");
