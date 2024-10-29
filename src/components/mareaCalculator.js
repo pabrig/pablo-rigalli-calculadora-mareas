@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import Whave from "../assets/olas-del-mar.png";
+import WhaveIcon from "../assets/wave-icon.png";
+import Clock from "../assets/clock.png";
 
 function MareaCalculator() {
   const [horaPleamar, setHoraPleamar] = useState("");
@@ -54,8 +57,9 @@ function MareaCalculator() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-blue-50 p-4">
-      <h2 className="text-xl font-bold mb-4 text-blue-700">
-        Calculador de Hora para Altura de Marea
+      <h2 className="text-xl font-bold mb-4 text-blue-700 flex align-middle gap-4">
+        Calculador de Mareas{" "}
+        <img src={Whave} alt="Olas del mar" style={{ width: "40px" }} />
       </h2>
       <div className="w-full max-w-md bg-white p-4 rounded-xl shadow-lg">
         <div className="mb-2">
@@ -74,13 +78,16 @@ function MareaCalculator() {
           <label className="block text-gray-700 mb-1 text-sm">
             Altura de Pleamar (m):
           </label>
-          <input
-            type="number"
-            value={alturaPleamar}
-            onChange={(e) => setAlturaPleamar(e.target.value)}
-            placeholder="1.00"
-            className="w-full p-1 border border-gray-300 rounded-xl focus:outline-none focus:ring focus:ring-blue-300"
-          />
+          <div className="flex items-center border border-gray-300 rounded-xl focus-within:ring focus-within:ring-blue-300 p-1">
+            <input
+              type="number"
+              value={alturaPleamar}
+              onChange={(e) => setAlturaPleamar(e.target.value)}
+              placeholder="1.00"
+              className="w-full p-1 outline-none"
+            />
+            <img src={WhaveIcon} alt="Icono de Ola" className="w-6 h-6 ml-2" />
+          </div>
         </div>
         <div className="mb-3">
           <label className="block text-gray-700 mb-1 text-sm">
@@ -98,13 +105,16 @@ function MareaCalculator() {
           <label className="block text-gray-700 mb-1 text-sm">
             Altura de Bajamar (m):
           </label>
-          <input
-            type="number"
-            value={alturaBajamar}
-            onChange={(e) => setAlturaBajamar(e.target.value)}
-            placeholder="1.00"
-            className="w-full p-1 border border-gray-300 rounded-xl focus:outline-none focus:ring focus:ring-blue-300"
-          />
+          <div className="flex items-center border border-gray-300 rounded-xl focus-within:ring focus-within:ring-blue-300 p-1">
+            <input
+              type="number"
+              value={alturaBajamar}
+              onChange={(e) => setAlturaBajamar(e.target.value)}
+              placeholder="1.00"
+              className="w-full p-1 outline-none"
+            />
+            <img src={WhaveIcon} alt="Icono de Ola" className="w-6 h-6 ml-2" />
+          </div>
         </div>
         <div className="mb-3">
           <label className="block text-gray-700 mb-1 text-sm">
@@ -120,13 +130,13 @@ function MareaCalculator() {
         </div>
         <button
           onClick={calcularHoraMarea}
-          className="w-full py-4 px-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 text-base"
+          className="w-full py-2 px-2 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 text-base"
         >
           Calcular Hora de la Marea
         </button>
         {horaResultado && (
           <div className="mt-4">
-            <h3 className="text-lg font-semibold text-blue-600">
+            <h3 className="text-xl font-semibold text-blue-600">
               Hora aproximada para alcanzar la altura deseada: {horaResultado}
             </h3>
           </div>
