@@ -10,14 +10,13 @@ function MareaCalculator() {
   const [alturaBajamar, setAlturaBajamar] = useState("");
   const [alturaDeseada, setAlturaDeseada] = useState("");
   const [horaResultado, setHoraResultado] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   const calcularHoraMarea = () => {
-    // Convertir alturas a números
     const alturaPleamarNum = parseFloat(alturaPleamar);
     const alturaBajamarNum = parseFloat(alturaBajamar);
     const alturaDeseadaNum = parseFloat(alturaDeseada);
 
-    // Validar que la altura deseada esté entre la altura de bajamar y pleamar
     if (
       alturaDeseadaNum < alturaBajamarNum ||
       alturaDeseadaNum > alturaPleamarNum
@@ -128,12 +127,25 @@ function MareaCalculator() {
             className="w-full p-1 border border-gray-300 rounded-xl focus:outline-none focus:ring focus:ring-blue-300"
           />
         </div>
-        <button
-          onClick={calcularHoraMarea}
-          className="w-full py-2 px-2 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 text-base"
-        >
-          Calcular Hora de la Marea
-        </button>
+        {alturaDeseada && alturaBajamar && alturaPleamar && (
+          <button
+            onClick={calcularHoraMarea}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="w-full py-2 px-2 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 text-base flex justify-center items-center gap-2"
+          >
+            {isHovered ? (
+              <img
+                src={WhaveIcon}
+                alt="Icono Ola"
+                className="w-6 h-6 "
+                color="white"
+              />
+            ) : (
+              "Calcular Hora de la Marea"
+            )}
+          </button>
+        )}
         {horaResultado && (
           <div className="mt-4">
             <h3 className="text-xl font-semibold text-blue-600">
