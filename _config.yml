@@ -1,2 +1,2 @@
-source: .
-destination: ./_site
+baseurl: "" # o el subdirectorio si corresponde
+url: "https://pabrig.github.io" # tu URL de GitHub Pages
