@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pablo-rigalli-calculadora-mareas/static/css/main.1e8e7b31.css",
+    "main.js": "/pablo-rigalli-calculadora-mareas/static/js/main.06bf9ce9.js",
+    "static/js/453.f7ab58ca.chunk.js": "/pablo-rigalli-calculadora-mareas/static/js/453.f7ab58ca.chunk.js",
+    "index.html": "/pablo-rigalli-calculadora-mareas/index.html",
+    "main.1e8e7b31.css.map": "/pablo-rigalli-calculadora-mareas/static/css/main.1e8e7b31.css.map",
+    "main.06bf9ce9.js.map": "/pablo-rigalli-calculadora-mareas/static/js/main.06bf9ce9.js.map",
+    "453.f7ab58ca.chunk.js.map": "/pablo-rigalli-calculadora-mareas/static/js/453.f7ab58ca.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1e8e7b31.css",
+    "static/js/main.06bf9ce9.js"
+  ]
+}
